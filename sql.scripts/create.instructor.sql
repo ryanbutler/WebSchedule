@@ -1,0 +1,21 @@
+USE [WebSchedule]
+GO
+
+/****** Object:  Table [dbo].[Instructor]    Script Date: 7/1/2025 6:21:37 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Instructor](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FName] [varchar](50) NULL,
+	[LName] [varchar](50) NULL,
+ CONSTRAINT [PK_Instructor] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
