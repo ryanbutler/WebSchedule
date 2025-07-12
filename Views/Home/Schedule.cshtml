@@ -1,0 +1,61 @@
+﻿@model List<WebSchedule.ViewModel.CourseViewModel>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h2>Courses</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Total Seats</th>
+            <th>Remaining Seats</th>
+            <th>Room</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Instructor</th>
+            <th>Location</th>
+            <th>Day</th>
+            <th>Meet Type</th>     
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if(item.RemainingSeats == 0)
+            {
+                <tr style="background-color:#FF0000">
+                    <td>@item.Title</td>
+                    <td>@item.TotalSeats</td>
+                    <td>@item.RemainingSeats</td>
+                    <td>@item.Room</td>
+                    <td>@item.StartTime</td>
+                    <td>@item.EndTime</td>
+                    <td>@item.InstructorName</td>
+                    <td>@item.Location</td>
+                    <td>@item.MeetDay</td>
+                    <td>@item.MeetType</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.TotalSeats</td>
+                    <td>@item.RemainingSeats</td>
+                    <td>@item.Room</td>
+                    <td>@item.StartTime</td>
+                    <td>@item.EndTime</td>
+                    <td>@item.InstructorName</td>
+                    <td>@item.Location</td>
+                    <td>@item.MeetDay</td>
+                    <td>@item.MeetType</td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
